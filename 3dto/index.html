@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3dtouch称重电子秤专业评测与选购指南，涵盖高精度称重、智能触控交互、多单位换算及厨房商用场景应用，提供详细参数对比与使用技巧。">
+    <meta name="keywords" content="3dtouch称重电子秤,智能电子秤,厨房秤,高精度称重,商用电子秤">
+    <title>3dtouch称重电子秤-高精度智能厨房与商用称重解决方案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #27ae60;
+            --accent-hover: #219150;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .feature-badge {
+            background: rgba(39, 174, 96, 0.1);
+            color: var(--accent-color);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-specs {
+            display: flex;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .spec-item {
+            background: #f0f2f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .buy-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .buy-btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Comparison Table */
+        .comparison-wrapper {
+            overflow-x: auto;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .cross-icon {
+            color: #e74c3c;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 60px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-item h3 {
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .guide-item h3::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .guide-item p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .guide-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .guide-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 16px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 16px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+            }
+
+            nav ul {
+                margin: 16px 0;
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <span>3D</span>Tech秤
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#products">热门型号</a></li>
+                <li><a href="#guide">选购指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <a href="#products" class="cta-button">立即选购</a>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>3D Touch称重电子秤：重新定义精准与交互</h1>
+            <p>融合先进3D触控技术与高精度传感器，为您提供从家庭厨房到专业烘焙、商业零售的全方位称重解决方案。</p>
+            <div class="hero-features">
+                <span class="feature-badge">±0.1g 极致精度</span>
+                <span class="feature-badge">3D 触控界面</span>
+                <span class="feature-badge">自动归零</span>
+                <span class="feature-badge">多单位切换</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="products">
+        <div class="section-header">
+            <h2>精选热销型号</h2>
+            <p>针对不同场景设计的专业级称重设备</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Card 1 -->
+            <article class="product-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/scale1/400/300" alt="3D Touch 智能厨房秤">
+                    <span class="card-tag">家庭首选</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">3D Touch 智能厨房秤</h3>
+                    <p class="card-desc">专为烘焙爱好者设计，3D触控大屏显示，支持克、盎司、斤等8种单位一键切换，带计时与去皮功能。</p>
+                    <div class="card-specs">
+                        <span class="spec-item">最大称重: 5kg</span>
+                        <span class="spec-item">精度: ±0.1g</span>
+                        <span class="spec-item">材质: 钢化玻璃</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">¥ 128.00</span>
+                        <a href="#" class="buy-btn">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="product-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/scale2/400/300" alt="商用 3D Touch 防爆秤">
+                    <span class="card-tag">商业专用</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">商用 3D Touch 防爆秤</h3>
+                    <p class="card-desc">适用于化工、石油等危险环境，3D触控面板防油防水，具备高精度称重与数据打印接口。</p>
+                    <div class="card-specs">
+                        <span class="spec-item">最大称重: 60kg</span>
+                        <span class="spec-item">精度: ±1g</span>
+                        <span class="spec-item">防爆等级: Ex</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">¥ 899.00</span>
+                        <a href="#" class="buy-btn">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="product-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/scale3/400/300" alt="珠宝首饰 3D Touch 秤">
+                    <span class="card-tag">高精度</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">珠宝首饰 3D Touch 秤</h3>
+                    <p class="card-desc">配备进口传感器，3D触控操作流畅，自动归零与累加功能，适合珠宝店与实验室使用。</p>
+                    <div class="card-specs">
+                        <span class="spec-item">最大称重: 300g</span>
+                        <span class="spec-item">精度: ±0.01g</span>
+                        <span class="spec-item">自动归零</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">¥ 456.00</span>
+                        <a href="#" class="buy-btn">查看详情</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="section-header">
+            <h2>核心功能对比</h2>
+        </div>
+
+        <div class="comparison-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>功能特性</th>
+                        <th>标准版</th>
+                        <th>3D Touch 智能版</th>
+                        <th>工业级版</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>显示屏类型</td>
+                        <td>普通LCD</td>
+                        <td class="check-icon">3D 触控显示屏</td>
+                        <td>工业背光屏</td>
+                    </tr>
+                    <tr>
+                        <td>防油防水等级</td>
+                        <td>IPX0</td>
+                        <td class="check-icon">IPX7 (可水洗)</td>
+                        <td>IP67 (专业防护)</td>
+                    </tr>
+                    <tr>
+                        <td>去皮功能</td>
+                        <td class="check-icon">支持</td>
+                        <td class="check-icon">支持 + 智能去皮</td>
+                        <td class="check-icon">支持 + 自动归零</td>
+                    </tr>
+                    <tr>
+                        <td>数据接口</td>
+                        <td>无</td>
+                        <td>USB / 蓝牙 (可选)</td>
+                        <td>RS232 / 485</td>
+                    </tr>
+                    <tr>
+                        <td>电池续航</td>
+                        <td>约 200 小时</td>
+                        <td>约 300 小时</td>
+                        <td>约 500 小时</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="container" id="guide">
+        <div class="section-header">
+            <h2>选购与使用指南</h2>
+            <p>如何选择最适合您的3D Touch称重电子秤</p>
+        </div>
+
+        <div class="guide-section">
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <h3>1. 确定使用场景</h3>
+                    <p>3D Touch称重电子秤分为家用、商用和工业用三大类。家用建议选择5kg以下、精度0.1g的款式；商用（如菜场、水果店）建议选择3D触控防滑面板、5kg-30kg的款式；工业及实验室则需关注防爆与高精度指标。</p>
+                    <ul class="guide-list">
+                        <li><strong>家庭烘焙：</strong> 需要克/盎司切换，玻璃材质易清洁。</li>
+                        <li><strong>电商称重：</strong> 需要打印功能与蓝牙数据传输。</li>
+                        <li><strong>化学实验：</strong> 必须选择防爆型或不锈钢材质。</li>
+                    </ul>
+                </div>
+                <div class="guide-item">
+                    <h3>2. 理解3D触控技术</h3>
+                    <p>传统的按键电子秤容易积灰且难以清洗，而3D Touch技术采用全触控面板，不仅外观更现代，而且具备防油防水特性。在选购时，请确认屏幕的材质是钢化玻璃还是强化塑料，玻璃材质通常更耐用。</p>
+                    <ul class="guide-list">
+                        <li><strong>操作便捷性：</strong> 触控反应速度应快于机械按键。</li>
+                        <li><strong>清洁维护：</strong> 触控屏边缘是否有溢出防水设计。</li>
+                        <li><strong>耐用性：</strong> 确认产品通过了相关防摔测试标准。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="faq">
+        <div class="section-header">
+            <h2>常见问题 (FAQ)</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">3D Touch电子秤的电池能用多久？</div>
+                <div class="faq-answer">正常使用情况下，内置锂电池续航时间通常在200到500小时之间。建议使用原装充电器，避免过度放电影响电池寿命。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">称重时数字跳动不稳定怎么办？</div>
+                <div class="faq-answer">请检查放置秤的桌面是否平整。如果桌面有震动，请放置在防震垫上。另外，确保秤体没有受到风吹或外部强磁场干扰。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">3D触控屏坏了可以单独维修吗？</div>
+                <div class="faq-answer">由于3D Touch屏幕通常集成在电路板上，损坏后建议联系厂家进行整机维修或更换，不建议自行拆解。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何进行单位换算？</div>
+                <div class="faq-answer">在关机状态下长按“单位”键开机，或开机状态下轻触屏幕下方的单位切换按钮，即可在克(g)、千克(kg)、磅(lb)、盎司(oz)之间切换。</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>3DTech秤</h4>
+            <p style="color: #bdc3c7; font-size: 0.9rem;">专注于为家庭、商业及工业领域提供高品质、高精度的3D Touch称重电子秤产品。</p>
+        </div>
+        <div class="footer-col">
+            <h4>产品系列</h4>
+            <ul>
+                <li><a href="#">智能厨房秤</a></li>
+                <li><a href="#">商用收银秤</a></li>
+                <li><a href="#">高精度天平</a></li>
+                <li><a href="#">工业防爆秤</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>支持服务</h4>
+            <ul>
+                <li><a href="#">使用手册下载</a></li>
+                <li><a href="#">保修政策</a></li>
+                <li><a href="#">联系客服</a></li>
+                <li><a href="#">售后预约</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 3DTech秤. All Rights Reserved. 本页面内容仅供参考，具体参数以实物为准。</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+  </html>
