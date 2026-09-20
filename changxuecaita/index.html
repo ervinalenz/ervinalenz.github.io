@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长靴踩踏-高清图片素材与艺术摄影展示平台</title>
+    <meta name="description" content="长靴踩踏专题展示平台，提供高清摄影图片、艺术创作灵感及相关视觉素材。专注于长靴摄影艺术、视觉表现力及审美探讨。">
+    <meta name="keywords" content="长靴踩踏,长靴摄影,高跟鞋艺术,靴子图片,摄影素材">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #d4a373;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/boots_hero/1600/900') no-repeat center center/cover;
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 var(--spacing-md);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: #b08d55;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid #eee;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 4px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .view-link {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .view-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Features / Info Section */
+        .features {
+            background-color: #fff;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--accent-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: var(--spacing-lg);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: var(--spacing-md);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: #fff;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 var(--spacing-md) var(--spacing-md);
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: var(--spacing-md);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ccc;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #333;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                display: none; /* Simplified mobile nav */
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>///</span> 靴子视界
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">高清图库</a></li>
+                    <li><a href="#">摄影教程</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">搜索</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>探索长靴踩踏的艺术与美学</h1>
+            <p>汇集全球优质摄影作品，展现力量与优雅的视觉碰撞，提供专业的视觉素材与创作灵感。</p>
+            <a href="#gallery" class="cta-btn">浏览精选图集</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Intro Section -->
+        <section class="intro-text" style="margin-bottom: 40px;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 12px;">关于视觉表现</h2>
+            <p style="color: #666; max-width: 800px;">
+                长靴踩踏作为一种特定的摄影题材和视觉表现方式，在艺术摄影和视觉艺术领域拥有独特的审美价值。它通过光影、构图和肢体语言的结合，传达出自信、力量以及独特的女性魅力。本站致力于为摄影爱好者和艺术创作者提供高质量的视觉参考与素材。
+            </p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>精选视觉图集</h2>
+                    <p>展示不同风格与场景下的艺术创作</p>
+                </div>
+                <div>
+                    <a href="#" style="font-size: 0.9rem; color: var(--accent-color);">查看更多 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/boots1/400/500" alt="黑色高跟鞋特写" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">光影特写</span>
+                        <h3 class="card-title">黑色漆皮的高光反射</h3>
+                        <p class="card-desc">利用侧逆光拍摄长靴表面的高光，展现材质的细腻质感与高级感。</p>
+                        <div class="card-footer">
+                            <span>2023-10-24</span>
+                            <a href="#" class="view-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/boots2/400/500" alt="腿部线条展示" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">人像摄影</span>
+                        <h3 class="card-title">修长腿部线条的完美延伸</h3>
+                        <p class="card-desc">通过构图引导视线，展现穿着长靴时腿部的修长比例与姿态。</p>
+                        <div class="card-footer">
+                            <span>2023-10-22</span>
+                            <a href="#" class="view-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/boots3/400/500" alt="力量感动作" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">动态抓拍</span>
+                        <h3 class="card-title">力量与优雅的瞬间定格</h3>
+                        <p class="card-desc">捕捉模特踩踏瞬间的张力，表现自信与掌控力的视觉语言。</p>
+                        <div class="card-footer">
+                            <span>2023-10-20</span>
+                            <a href="#" class="view-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/boots4/400/500" alt="复古风格" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">复古风格</span>
+                        <h3 class="card-title">复古风情的靴子穿搭指南</h3>
+                        <p class="card-desc">探讨如何通过长靴搭配不同风格的服饰，打造复古时尚造型。</p>
+                        <div class="card-footer">
+                            <span>2023-10-18</span>
+                            <a href="#" class="view-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">HD</div>
+                    <h3>高清原图</h3>
+                    <p>提供专业级别的摄影原图下载，满足平面设计、艺术创作的高质量需求。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">Inspiration</div>
+                    <h3>创作灵感</h3>
+                    <p>汇集全球摄影师的优秀作品，激发您的创作热情，提升摄影技艺。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">Safe</div>
+                    <h3>安全规范</h3>
+                    <p>所有内容均符合网络内容安全规范，专注于艺术审美与视觉表达。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">这些图片可以用于商业用途吗？</div>
+                <div class="faq-answer">本站部分图片为原创摄影作品，另有部分为精选素材。请查看具体图片的版权说明或联系版权方获取授权。建议在下载前确认具体的授权协议。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何拍摄出具有张力的长靴照片？</div>
+                <div class="faq-answer">建议关注光线的运用，侧逆光能很好地勾勒出靴子的轮廓；构图上注意留白与引导线；模特的姿态要自信，眼神要与镜头或被踩踏物体产生互动。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">网站是否支持自定义搜索？</div>
+                <div class="faq-answer">目前网站提供分类浏览和标签筛选功能。您可以点击顶部的“搜索”按钮，输入关键词（如“高跟鞋”、“黑色”、“特写”等）进行查找。</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">摄影师招募</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源分类</h4>
+                <ul>
+                    <li><a href="#">高跟鞋摄影</a></li>
+                    <li><a href="#">靴子特写</a></li>
+                    <li><a href="#">时尚穿搭</a></li>
+                    <li><a href="#">艺术摆拍</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">摄影教程</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 靴子视界. 保留所有权利. 本站内容仅供艺术欣赏与学习交流使用。
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                              </html>
