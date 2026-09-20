@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="乐购吧为您提供一站式购物指南、优惠信息汇总及优质商品推荐。涵盖日用百货、数码家电、生鲜食品等多个品类，助您轻松比价，发现高性价比好物。">
+    <meta name="keywords" content="乐购吧,购物指南,比价网站,优惠信息,生活百货,数码家电">
+    <title>乐购吧-优质生活购物指南与优惠推荐平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #f1faee;
+            --accent-color: #457b9d;
+            --text-main: #1d3557;
+            --text-light: #6c757d;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 16px;
+            font-weight: 700;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 5px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            background-color: #e9ecef;
+            color: var(--text-light);
+            border-radius: 20px;
+            margin-right: 8px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: var(--bg-body);
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            font-size: 0.95rem;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #d62839 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Featured Deals */
+        .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .price small {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+            margin-left: 4px;
+        }
+
+        .shop-name {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .shop-name span {
+            color: var(--accent-color);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .guide-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .guide-visual {
+            background: var(--bg-body);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .guide-visual img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d3557;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                font-size: 0.9rem;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                🛒 乐购吧
+                <span>Guide</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">比价工具</a></li>
+                    <li><a href="#">购物攻略</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索商品、品牌或优惠...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>发现高性价比好物</h1>
+            <p>乐购吧为您聚合全网最新优惠信息，智能比价，助您每一分钱都花在刀刃上。</p>
+            <a href="#" class="hero-btn">开始浏览</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Categories -->
+        <section>
+            <h2 class="section-title">热门分类</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <span class="category-icon">📱</span>
+                    <div class="category-name">数码家电</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">👗</span>
+                    <div class="category-name">时尚服饰</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🍎</span>
+                    <div class="category-name">生鲜食品</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🏠</span>
+                    <div class="category-name">家居生活</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">💄</span>
+                    <div class="category-name">美妆个护</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">👶</span>
+                    <div class="category-name">母婴亲子</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">📚</span>
+                    <div class="category-name">图书影音</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">⚽</span>
+                    <div class="category-name">运动户外</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Deals -->
+        <section>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2 class="section-title" style="margin-bottom: 0;">限时特惠</h2>
+                <a href="#" style="color: var(--accent-color); font-weight: 500;">查看全部 ></a>
+            </div>
+            <div class="deals-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/tech1/400/300" alt="无线降噪耳机" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Hi-Fi 无线降噪耳机 Pro</h3>
+                        <p class="product-desc">沉浸式音质体验，30小时超长续航，支持多设备连接。</p>
+                        <div class="price-row">
+                            <div class="price">¥899<small>¥1299</small></div>
+                            <div class="shop-name">京东自营 <span>99%好评</span></div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/fashion1/400/300" alt="智能运动手表" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">多功能智能运动手表 X2</h3>
+                        <p class="product-desc">心率监测，防水设计，运动模式自动识别。</p>
+                        <div class="price-row">
+                            <div class="price">¥499<small>¥799</small></div>
+                            <div class="shop-name">天猫旗舰店 <span>95%好评</span></div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/home1/400/300" alt="智能扫地机器人" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Laser 激光导航扫地机器人</h3>
+                        <p class="product-desc">建图快，避障强，支持自动集尘。</p>
+                        <div class="price-row">
+                            <div class="price">¥1599<small>¥2299</small></div>
+                            <div class="shop-name">苏宁易购 <span>98%好评</span></div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/food1/400/300" alt="进口有机牛奶" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">进口全脂有机牛奶 12盒装</h3>
+                        <p class="product-desc">来自新西兰牧场，新鲜直达，富含钙质。</p>
+                        <div class="price-row">
+                            <div class="price">¥68<small>¥89</small></div>
+                            <div class="shop-name">盒马鲜生 <span>新鲜</span></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Shopping Guide -->
+        <section class="guide-section">
+            <div class="guide-grid">
+                <div class="guide-content">
+                    <h2>如何利用乐购吧省更多钱？</h2>
+                    <p>我们不仅提供商品信息，更致力于为您提供实用的购物决策支持。通过我们的聚合平台，您可以轻松掌握各大电商平台的促销节点。</p>
+                    <ul class="check-list">
+                        <li>实时监控价格波动，避免买贵。</li>
+                        <li>一键比对全网同款商品，找出最低价。</li>
+                        <li>获取专业的避坑指南和测评报告。</li>
+                        <li>加入会员社群，获取独家内部优惠券。</li>
+                    </ul>
+                </div>
+                <div class="guide-visual">
+                    <img src="https://picsum.photos/seed/guide/600/400" alt="购物省钱攻略示意图">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section>
+            <h2 class="section-title">常见问题</h2>
+            <div style="max-width: 800px; background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: 600; color: var(--text-main);">乐购吧的商品价格是实时的吗？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">我们的系统会定期抓取主流电商平台的公开数据，并更新到页面。但价格变动非常频繁，建议您点击商品详情页查看实时报价。</p>
+                </details>
+                <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: 600; color: var(--text-main);">如何购买页面上的商品？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">乐购吧本身不直接参与交易。所有商品链接均跳转至对应的官方店铺或第三方电商平台，您可以在该平台完成下单和支付。</p>
+                </details>
+                <details style="border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: 600; color: var(--text-main);">你们如何保证信息的准确性？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">我们拥有一支专业的编辑团队，会对上架商品进行人工审核，确保品牌、规格和图片信息的准确性。</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 15px;">
+                        🛒 乐购吧
+                        <span style="color: white;">Guide</span>
+                    </div>
+                    <p>致力于打造最专业的购物决策辅助平台，让您的每一次消费都更加明智、划算。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>帮助中心</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">获取最新优惠资讯</p>
+                    <div style="margin-top: 10px; display: flex; gap: 10px;">
+                        <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
+                        <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 乐购吧 Guide 版权所有. 本站为演示页面，不提供实际交易服务.
+            </div>
+        </div>
+    </footer>
+
+</body>
+                  </html>
