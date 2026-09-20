@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色波 - 色彩波纹视觉艺术与调色指南</title>
+    <meta name="description" content="色波是一个专注于色彩波纹视觉效果、流体渐变与高饱和度色彩美学分享的在线艺术社区与工具指南网站。提供色彩搭配灵感、波纹特效制作教程及高清视觉素材欣赏。">
+    <meta name="keywords" content="色波,色彩波纹,渐变艺术,流体设计,视觉设计,色彩搭配">
+    <style>
+        :root {
+            --primary: #ff3cac;
+            --secondary: #784ba0;
+            --accent: #2b86c5;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --text: #333;
+            --text-light: #666;
+            --card-bg: #ffffff;
+            --radius: 12px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 60, 172, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 60, 172, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(120, 75, 160, 0.4), rgba(26, 26, 26, 1));
+            z-index: 1;
+        }
+
+        .wave-overlay {
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ff3cac" fill-opacity="0.2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 2;
+            animation: waveMove 20s linear infinite;
+        }
+
+        @keyframes waveMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 60, 172, 0.1), rgba(120, 75, 160, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Gallery / Showcase */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            background: white;
+        }
+
+        .tools-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tools-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tools-visual {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+            border-radius: var(--radius);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-block {
+            position: absolute;
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .tool-block:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .tool-block:nth-child(2) { top: 50%; right: 10%; animation-delay: 2s; }
+        .tool-block:nth-child(3) { bottom: 20%; left: 30%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .tool-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            background: #eee;
+            border-radius: 8px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: white;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-light);
+            background: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+
+        .icon-plus {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text);
+            border-radius: 50%;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .icon-plus {
+            border-color: var(--primary);
+            transform: rotate(45deg);
+        }
+
+        .icon-plus::before, .icon-plus::after {
+            content: '';
+            position: absolute;
+            background: var(--text);
+            transition: var(--transition);
+        }
+
+        .icon-plus::before { width: 2px; height: 12px; top: 4px; left: 9px; }
+        .icon-plus::after { width: 12px; height: 2px; top: 9px; left: 4px; }
+
+        .faq-item.active .icon-plus::before, .faq-item.active .icon-plus::after {
+            background: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .tools-container { flex-direction: column-reverse; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">色波</div>
+                <div class="nav-links">
+                    <a href="#home">首页</a>
+                    <a href="#gallery">色彩灵感</a>
+                    <a href="#tools">创作工具</a>
+                    <a href="#guide">设计指南</a>
+                </div>
+                <a href="#tools" class="btn-primary">开始创作</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg"></div>
+            <div class="wave-overlay"></div>
+            <div class="hero-content">
+                <h1>捕捉流动的色彩</h1>
+                <p>探索高饱和度波纹美学，获取色彩灵感与流体设计工具，打造令人惊叹的视觉体验。</p>
+                <a href="#gallery" class="btn-primary">浏览画廊</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择色波？</h2>
+                    <p>为设计师、艺术家和创意工作者提供的色彩解决方案</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>灵感无限</h3>
+                        <p>每日更新精选的渐变波纹与流体色彩方案，激发您的创作思维。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>专业工具</h3>
+                        <p>内置在线调色板与渐变生成器，无需安装即可快速制作效果。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>响应式设计</h3>
+                        <p>无论是移动端还是桌面端，色彩效果都能完美适配显示。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section" style="background-color: white;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门色彩波纹</h2>
+                    <p>探索社区中热度最高的视觉作品</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/color1/400/400" alt="紫罗兰波纹">
+                        <div class="gallery-overlay">
+                            <h4>紫罗兰梦境</h4>
+                            <p>流体渐变</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/color2/400/400" alt="赛博朋克波纹">
+                        <div class="gallery-overlay">
+                            <h4>赛博霓虹</h4>
+                            <p>高对比度</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/color3/400/400" alt="日落波纹">
+                        <div class="gallery-overlay">
+                            <h4>落日余晖</h4>
+                            <p>暖色调</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/color4/400/400" alt="深海波纹">
+                        <div class="gallery-overlay">
+                            <h4>深海幽蓝</h4>
+                            <p>冷色调</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="section tools-section">
+            <div class="container">
+                <div class="tools-container">
+                    <div class="tools-content">
+                        <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                            <h2>在线色彩实验室</h2>
+                            <p>直观的交互式工具，助您掌控每一个像素的细节。</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">1</div>
+                            <div>
+                                <h4>双色渐变生成</h4>
+                                <p style="color:#666; font-size:0.9rem;">选择起始色与结束色，实时预览波纹流动效果。</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">2</div>
+                            <div>
+                                <h4>透明度控制</h4>
+                                <p style="color:#666; font-size:0.9rem;">精细调节混合模式与不透明度，打造层次感。</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">3</div>
+                            <div>
+                                <h4>CSS 代码导出</h4>
+                                <p style="color:#666; font-size:0.9rem;">一键复制生成的 CSS 代码，直接应用到项目中。</p>
+                            </div>
+                        </div>
+                        <button class="btn-primary" style="margin-top: 20px;">打开实验室</button>
+                    </div>
+                    <div class="tools-visual">
+                        <div class="tool-block">
+                            <div style="height: 10px; width: 60%; background: #eee; border-radius: 5px; margin-bottom: 10px;"></div>
+                            <div style="height: 10px; width: 40%; background: #eee; border-radius: 5px;"></div>
+                        </div>
+                        <div class="tool-block">
+                            <div style="height: 40px; width: 40px; background: var(--primary); border-radius: 50%;"></div>
+                            <div style="height: 40px; width: 40px; background: var(--secondary); border-radius: 50%; margin-left: 10px;"></div>
+                        </div>
+                        <div class="tool-block">
+                            <div style="height: 60px; width: 100%; background: linear-gradient(90deg, var(--accent), var(--primary)); border-radius: 5px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>色彩搭配指南</h2>
+                    <p>掌握波纹设计的核心法则</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <h3>互补色理论</h3>
+                        <p style="color:var(--text-light); margin-top:10px;">使用色轮上相对的颜色（如蓝与橙）可以创造出强烈、充满活力的波纹效果。</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>同色系渐变</h3>
+                        <p style="color:var(--text-light); margin-top:10px;">保持色相一致，通过调整饱和度和亮度来制造平滑、优雅的视觉流动。</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>动态模糊</h3>
+                        <p style="color:var(--text-light); margin-top:10px;">在波纹设计中加入轻微的模糊效果，可以模拟液体的粘稠感与光影折射。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" style="background: white;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>色波生成的代码可以直接用于生产环境吗？</span>
+                            <div class="icon-plus"></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>是的，我们提供的所有渐变代码均经过优化，支持现代浏览器，可以直接嵌入到您的网站、APP或设计工具中。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>如何保存我喜欢的色彩波纹？</span>
+                            <div class="icon-plus"></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>在画廊页面点击任意作品，可以查看详细信息。部分高级功能需要注册账号，以便您收藏和分享您的创作。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>支持哪些设计软件格式？</span>
+                            <div class="icon-plus"></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>除了CSS代码，我们支持导出为Photoshop（PSD）、Sketch和Figma的智能对象格式，方便您在专业软件中进行二次编辑。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">色波</div>
+                    <p style="color: #aaa; font-size: 0.9rem;">致力于传播色彩美学，为全球设计师提供最前沿的视觉灵感。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">最新作品</a></li>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">设计师专访</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">渐变库</a></li>
+                        <li><a href="#">纹理素材</a></li>
+                        <li><a href="#">配色方案</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 色波 ColorWave. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    child.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+                          </html>
